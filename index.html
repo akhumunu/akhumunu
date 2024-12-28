@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iHearYou</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="sunflower-theme">
+    <!-- Navbar -->
+    <div class="navbar">
+        <li>Beautiful Together</li>
+        <li>Send Your Love</li>
+        <li>I Miss You</li>
+        <li id="switch-theme">Switch Theme</li>
+    </div>
+
+    <!-- Main Section -->
+    <div class="main">
+        <input type="text" id="msg" placeholder="Write your love here...">
+        <input type="submit" value="Send">
+        <a id="download-link" style="display:none;" download="next.html">Download Updated File</a>
+        <p id="status"></p>
+    </div>
+
+    <!-- Hidden Div -->
+    <div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="cards">
+        <div class="card" id="hidden-div" style="display: none;">
+            <h3>Thanks Sweetheart For Your Love</h3>
+        </div>
+        <div class="card">
+            <h3>Oye Cutie</h3>
+            <p>Jaldi jaldi message kiya karo</p>
+        </div>
+        <div class="card">
+            <h3>Meri Munmun Rani</h3>
+            <p>Love you so much</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <li>Made with love by AKHU</li>
+        <li id="go-to-top">Go to Top</li>
+    </div>
+
+    <!-- JavaScript for Functionality -->
+    <script>
+        // Theme Switching
+        const body = document.body;
+        const themeSwitcher = document.getElementById('switch-theme');
+        themeSwitcher.addEventListener('click', () => {
+            body.classList.toggle('sunflower-theme');
+            body.classList.toggle('daisy-theme');
+        });
+
+        // Go to Top Button
+        const goToTopButton = document.getElementById('go-to-top');
+        window.addEventListener('scroll', () => {
+            goToTopButton.style.display = window.scrollY > 100 ? 'block' : 'none';
+        });
+        goToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "B_SCTsf10c4EsDlUq",
+            });
+        })();
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
